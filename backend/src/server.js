@@ -1,12 +1,15 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 const PORT = process.env.PORT || 4000;
 
+app.use(cors());
+
 app.get("/", (req, res) => {
-  res.send("Hello from express...");
+  res.send("Hello from Express...");
 });
 
 app.listen(PORT, () => {
-  console.log(`Server um and running on port: ${PORT}`);
+  console.log(`Server up and running on port: ${PORT}`);
 });
