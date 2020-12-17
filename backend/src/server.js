@@ -1,10 +1,16 @@
 const express = require("express");
-const cors = require("cors");
 const app = express();
+
+const cors = require("cors");
+const dbConnect = require("../config/db");
 
 const PORT = process.env.PORT || 4000;
 
-app.use(cors());
+// Express config:
+app.use(cors()); // for cross origin
+
+// DB connect:
+dbConnect();
 
 app.get("/", (req, res) => {
   res.send("Hello from Express...");
