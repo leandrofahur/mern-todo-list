@@ -8,6 +8,9 @@ const PORT = process.env.PORT || 4000;
 
 // Express config:
 app.use(cors()); // for cross origin
+app.use(express.json({ extended: false }));
+// Routes:
+app.use("/api/task", require("./routes/api/task"));
 
 // DB connect:
 dbConnect();
